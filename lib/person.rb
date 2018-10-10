@@ -80,17 +80,10 @@ def call_friend(friend)
   end
 
 def start_conversation(person, topic)
-    objects = [self, person]
-    if topic == "politics"
-      objects.each { |o| o.happiness -= 2}
-      first, second = ["partisan", "lobbyist"]
-    elsif topic == "weather"
-      objects.each { |o| o.happiness += 1}
-      first, second = ["sun", "rain"]
-    end
-    first ||= "blah"
-    second ||= "blah"
-    base_string = "blah blah #{first} blah #{second}"
+   if topic == "politics"
+     self.happiness -= 2
+     person.happiness -= 2
+     return
   end
 
 end #Class end
